@@ -1,0 +1,85 @@
+.user-tabs {
+  display: grid;
+  grid-template-columns: 1fr auto; 
+  gap: 1rem; 
+  align-items: center;
+  padding-top: 1.25rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-bar input {
+  padding: 1rem;
+  padding-left: 3.4375rem; 
+  border: 1px solid #BFC8E6;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 400;
+  max-width: 18.4375rem;
+  font-family: "Poppins", serif;
+  color: #151B32;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.search-bar input::placeholder {
+  color: #151B32; 
+  opacity: 0.7;
+}
+
+/* Tab list styles */
+.tab-list {
+  display: flex;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.tab-item {
+  padding: 1rem;
+  text-decoration: none;
+  color: #151B32;
+  background-color: white;
+  border-radius: 0.5rem;
+  font-family: "Poppins", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+
+}
+
+.active {
+  background-color: #849FFF;
+  color: #fff;
+}
+
+@media (max-width: 993px) {
+  .user-tabs {
+    grid-template-columns: 1fr;
+    gap: 1.5rem; 
+  }
+
+  .tab-list {
+    grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr)); 
+  }
+}
+
+@media (max-width: 364px) {
+  .tab-item { 
+    font-size: 0.875rem;
+  }
+
+}
+

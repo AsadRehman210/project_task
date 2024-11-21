@@ -1,0 +1,83 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); 
+  gap: 1rem; 
+  background-color: white;
+  padding-top: 3rem;
+  justify-content: center;
+  align-items: stretch; 
+  box-sizing: border-box; 
+}
+
+.profile-card {
+  display: flex;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #FBFCFF;
+
+}
+.profile-card:hover{
+ border: 1px solid #BFC8E5;
+ box-shadow: 0 0.5rem 1.4375rem 0 #DAE0F9B2;
+ cursor: pointer;
+
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 6.0625rem;
+  height: 6.0625rem;
+  margin-right: 1.25rem;
+
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.name {
+  font-family: "Merriweather", serif;
+  font-size: 1.125rem;
+  font-weight: 900;
+  text-align: left;
+  color: #151B32;
+  margin: 0;
+
+}
+
+.location {
+  margin: 0%;
+  font-family: "Poppins", serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: left;
+  color: #151B32;
+
+}
+
+.tags {
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.tag {
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.625rem;
+  border: 1px solid #BFC8E6;
+  font-family: "Poppins", serif;
+  font-size:  0.75rem;
+  font-weight: 400;
+  text-align: left;
+  color: #516FD4;
+  background: white;
+}
+
+.tag:hover {
+  background-color: #d1d1d1;
+  cursor: pointer;
+}
