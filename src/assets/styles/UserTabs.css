@@ -31,6 +31,10 @@
   transform: translateY(-50%);
   color: #999;
 }
+.search-icon img{
+  width: 32px;
+  height: 32px;
+}
 
 .search-bar input::placeholder {
   color: #151B32; 
@@ -65,7 +69,7 @@
   color: #fff;
 }
 
-@media (max-width: 993px) {
+@media (max-width: 1079px) {
   .user-tabs {
     grid-template-columns: 1fr;
     gap: 1.5rem; 

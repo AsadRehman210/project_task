@@ -1,58 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../assets/styles/Card.css"
 import Card from '../components/Card'
-import Lelah from "../assets/images/Lelah Nichols.png"
-import Jesus from "../assets/images/jesus.png";
-import Annie from "../assets/images/annie.png";
-import Robert from "../assets/images/Robert.png";
-import Amy from "../assets/images/amy.png";
-import Anthony from "../assets/images/Anthony.png";
+import axios from 'axios';
 
 const NewUser = () => {
-  const users = [
-    {
-      id: 1,
-      name: "Lelah Nichols",
-      location: "Troy, MI",
-      tags: ["clothes", "stem"],
-      image: Lelah,
-    },
-    {
-      id: 2,
-      name: "Jesus Weiss",
-      location: "Fort Worth, TX",
-      tags: ["hoodie", "gadget", "speed", "winter"],
-      image: Jesus,
-    },
-    {
-      id: 3,
-      name: "Annie Rice",
-      location: "Austin, TX",
-      tags: ["road", "mountain", "trip", "earth", "nature"],
-      image: Annie,
-    },
-    {
-      id: 4,
-      name: "Robert Brower",
-      location: "Cincinnati, OH",
-      tags: ["maintenance", "gears", "home", "repair"],
-      image: Robert,
-    },
-    {
-      id: 5,
-      name: "Amy Campbell",
-      location: "Warrior, AL",
-      tags: ["music", "drinks"],
-      image: Amy,
-    },
-    {
-      id: 6,
-      name: "Anthony S. Morin",
-      location: "Lyndhurst, NJ",
-      tags: ["vintage", "electric"],
-      image: Anthony,
-    },
-  ];
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get('https://dummyjson.com/users'); 
+        console.log('API Response:', response.data); 
+        setUsers(response.data.users); 
+      } catch (err) {
+        console.error('Error fetching users:', err); 
+        setError(err.response ? err.response.data.message : err.message);
+      }
+      setLoading(false);
+    };
+
+    fetchUsers();
+  }, []);
+
+
+  if (loading) return <p>Loading users...</p>;
+  if (error) return <p>Error loading users: {error}</p>;
   return (
 
     <main className="cards-container">

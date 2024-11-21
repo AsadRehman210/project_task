@@ -6,16 +6,16 @@ const Card = ({user}) => {
       <div className="profile-card">
         <img
           className="profile-img"
-          src={user.image} // Replace with the image URL or import the image
+          src={user.image} 
           alt="profile"
         />
         <div className="card-details">
-          <h2 className="name">{user.name}</h2>
-          <p className="location">{user.location}</p>
+          <h2 className="name">{user.firstName}</h2>
+          <p className="location">{user.address.address}</p>
           <div className="tags">
-          {user.tags.map((tag, index)=>(
-            <span key={index+tag} className="tag">{tag}</span>
-          ))}
+          <span className="tag">winter</span>
+          <span className="tag">clothes</span>
+          <span className="tag">food</span>
           </div>
         </div>
       </div>

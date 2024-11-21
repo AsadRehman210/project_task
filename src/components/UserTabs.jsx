@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/styles/UserTabs.css';
 import { NavLink } from 'react-router-dom';
-import searchIcon from "../assets/images/search icon.png"
+import searchIcon from "../assets/images/search icon1.png"
 
 const UserTabs = () => {
   const tabs = [
